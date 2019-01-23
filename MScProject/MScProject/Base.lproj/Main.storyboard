@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MScProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rlr-Xm-8RJ">
+                                <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Draw a digit below !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5Y-Sd-x4w">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="374"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="374" id="vJJ-Eo-rsP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RS5-t2-CKy">
+                                <rect key="frame" x="310" y="382" width="49" height="30"/>
+                                <state key="normal" title="Predict"/>
+                                <connections>
+                                    <action selector="predictDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ma9-Ep-3Ma"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Az-Gc-pSq" userLabel="DrawView" customClass="DrawView" customModule="MScProject" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="432" width="375" height="235"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNM-s1-jo9">
+                                <rect key="frame" x="26" y="382" width="36" height="30"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clearDraw:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ltU-ly-XpM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rNM-s1-jo9" firstAttribute="top" secondItem="I5Y-Sd-x4w" secondAttribute="bottom" constant="8" symbolic="YES" id="14t-fc-0RW"/>
+                            <constraint firstItem="0Az-Gc-pSq" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="1Yw-51-tUF"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rNM-s1-jo9" secondAttribute="trailing" constant="20" symbolic="YES" id="5Lo-gq-i87"/>
+                            <constraint firstItem="RS5-t2-CKy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7BC-Ma-ysx"/>
+                            <constraint firstItem="I5Y-Sd-x4w" firstAttribute="trailing" secondItem="0Az-Gc-pSq" secondAttribute="trailing" id="H0J-1J-Fsa"/>
+                            <constraint firstItem="RS5-t2-CKy" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Or6-cC-PbC"/>
+                            <constraint firstItem="I5Y-Sd-x4w" firstAttribute="leading" secondItem="rlr-Xm-8RJ" secondAttribute="leading" id="QiE-oo-p41"/>
+                            <constraint firstItem="RS5-t2-CKy" firstAttribute="top" secondItem="I5Y-Sd-x4w" secondAttribute="bottom" constant="8" symbolic="YES" id="Qx4-qU-yRv"/>
+                            <constraint firstItem="rNM-s1-jo9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="TeT-5n-0yd"/>
+                            <constraint firstAttribute="trailing" secondItem="I5Y-Sd-x4w" secondAttribute="trailing" id="VH1-Mf-oAu"/>
+                            <constraint firstItem="0Az-Gc-pSq" firstAttribute="top" secondItem="rNM-s1-jo9" secondAttribute="bottom" constant="20" id="YoV-et-tLR"/>
+                            <constraint firstAttribute="trailing" secondItem="rlr-Xm-8RJ" secondAttribute="trailing" constant="333" id="eEk-qg-H08"/>
+                            <constraint firstItem="I5Y-Sd-x4w" firstAttribute="leading" secondItem="0Az-Gc-pSq" secondAttribute="leading" id="nmw-kV-fyb"/>
+                            <constraint firstItem="I5Y-Sd-x4w" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="pCd-Pk-MbZ"/>
+                            <constraint firstItem="I5Y-Sd-x4w" firstAttribute="top" secondItem="rlr-Xm-8RJ" secondAttribute="top" id="rqw-l6-e5O"/>
+                            <constraint firstAttribute="bottom" secondItem="rlr-Xm-8RJ" secondAttribute="bottom" constant="646" id="t5W-ga-qtM"/>
+                            <constraint firstItem="I5Y-Sd-x4w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ydw-22-H6a"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="digitLabel" destination="I5Y-Sd-x4w" id="YZC-X2-k29"/>
+                        <outlet property="drawView" destination="0Az-Gc-pSq" id="GYj-T0-YkY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
